@@ -18,11 +18,11 @@ def crawl_url(pageUrl, writer):
         try:
             new_url = soup.find("li",{"class":"next"})
             print("---" + new_url.a.attrs['href'])
-            substring = "catalogue/"
-            if substring in new_url.a.attrs['href']:
+            catalogue_str = "catalogue/"
+            if catalogue_str in new_url.a.attrs['href']:
                 crawl_url(new_url.a.attrs['href'], writer)
             else:
-                crawl_url(substring + new_url.a.attrs['href'], writer)
+                crawl_url(catalogue_str + new_url.a.attrs['href'], writer)
         except AttributeError as e:
             print('Crawl Finished')
             return None
