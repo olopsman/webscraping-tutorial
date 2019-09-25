@@ -21,4 +21,4 @@ submit.click()
 
 driver.save_screenshot("screenshot.png")
 
-#driver.close()
+driver.close()
